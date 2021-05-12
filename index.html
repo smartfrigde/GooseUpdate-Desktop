@@ -1,17 +1,88 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <title>GooseMod Installer</title>
+    <style>
+      @import url("https://kckarnige.github.io/femboi_owo/discord-font.css");
+
+      :root {
+        background-color: #2c2f33;
+        --header-secondary: #b9bbbe;
+        --header-primary: #fff;
+        --background-tertiary: #202225;
+      }
+
+      body {
+        color: white;
+      }
+
+      p {
+        color: #8e9297;
+        text-align: center;
+        font-weight: 100;
+        transform: translateY(-185%);
+        font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+        text-rendering: optimizeLegibility;
+        font-style: italic;
+      }
+
+      h1 {
+        font-size: 0px;
+        text-align: center;
+        transform: translateY(-105%);
+      }
+
+      h1:before {
+        content: "Goose";
+        color: #3edf61;
+        font-weight: normal;
+        font-family: Helvetica, sans-serif;
+        font-size: 32px;
+      }
+
+      h1:after {
+        content: "Update";
+        color: #ffffff;
+        font-weight: normal;
+        font-family: Discordinated;
+        font-size: 32px;
+      }
+
+      span {
+        text-align: center;
+      }
+
+
+      .container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        color: #fff;
+        transform: translate(-50%, -50%);
+      }
+      
+    </style>
+    <meta charset="UTF-8" />
+    <title>GooseUpdate Desktop</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-
+    <label for="cars">Choose your Discord Channel:</label>
+    <select name="channel" id="channel">
+      <option value="stable">Stable</option>
+      <option value="canary">Canary</option>
+      <option value="ptb">PTB</option>
+      <option value="dev">Development</option>
+    </select>
+    <label for="cars">Choose what mod you want installed:</label>
+    <select name="mod" id="mod">
+      <option value="GooseMod">GooseMod</option>
+      <option value="BetterDiscord">BetterDiscord</option>
+      <option value="SmartCord">SmartCord</option>
+      <option value="GooseMod+BetterDiscord">GooseMod+BetterDiscord</option>
+      <option value="GooseMod+SmartCord">GooseMod+SmartCord</option>
+    </select>
+    <button onclick="inject()" class="install">Install</button>
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
+    <script src="./inject.js"></script>
   </body>
 </html>

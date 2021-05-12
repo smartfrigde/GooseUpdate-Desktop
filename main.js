@@ -12,7 +12,7 @@ function createWindow () {
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       enableRemoteModule: true,
-      nodeIntegration: false,
+      nodeIntegration: true,
     },
   });
 
@@ -20,7 +20,7 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
