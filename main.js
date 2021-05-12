@@ -9,6 +9,7 @@ function createWindow () {
     height: 320,
     title: "GooseMod Installer",
     frame: false,
+    resizable: false,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       enableRemoteModule: true,
