@@ -30,7 +30,7 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  //mainWindow.webContents.openDevTools()
   //fix for close lag
   mainWindow.on("close", function (event) {
     event.preventDefault();
