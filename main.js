@@ -3,11 +3,11 @@ const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const os = require('os')
 if (os.type() == "Linux") {
-  var iconformat = __dirname + "/logo.png";
+  var iconformat = __dirname + "/build/logo.png";
 } else {
   //test this
   console.log("Running Non-Linux");
-  var iconformat = __dirname + "/logo.ico";
+  var iconformat = __dirname + "/build/logo.ico";
 }
 
 function createWindow () {

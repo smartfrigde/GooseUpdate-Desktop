@@ -1,32 +1,49 @@
 {
   "name": "gooseupdate-desktop",
   "version": "1.0.0",
-  "description": "GooseUpdate Desktop App",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smartfrigde/GooseUpdate-Desktop.git"
-  },
-  "keywords": [
-    "Electron",
-    "installer",
-    "goosemod",
-    "bbd",
-    "goosenest"
-  ],
-  "author": "GitHub",
   "license": "MIT",
-  "devDependencies": {
-    "electron": "^12.0.7"
+  "description": "GooseUpdate Desktop is simple installer for Discord mods.",
+  "author": "smartfrigde",
+  "main": "./main.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "start": "npm install && electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.smartfrigde.gooseupdate-desktop",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
   },
   "dependencies": {
-    "custom-electron-titlebar": "^3.2.6"
+    "custom-electron-titlebar": "3.2.6",
+    "electron-builder-squirrel-windows": "^22.11.3"
   },
-  "bugs": {
-    "url": "https://github.com/smartfrigde/GooseUpdate-Desktop/issues"
-  },
-  "homepage": "https://github.com/smartfrigde/GooseUpdate-Desktop#readme"
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  }
 }
