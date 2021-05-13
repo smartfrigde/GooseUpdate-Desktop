@@ -21,13 +21,9 @@
       }
 
       p {
-        color: #8e9297;
+        color: white;
         text-align: center;
-        font-weight: 100;
-        transform: translateY(-185%);
-        font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
-        text-rendering: optimizeLegibility;
-        font-style: italic;
+        user-select: none;
       }
       ::-webkit-scrollbar {
         display: none;
@@ -96,16 +92,16 @@
     <title>GooseUpdate Desktop</title>
   </head>
   <body>
-    <h3 class="text-center">Choose your Discord Channel</h3>
+    <p class="text-center">Choose your Discord Channel</p>
     <div class="center">
       <select name="channel" id="channel">
-        <option value="discordstable">Stable</option>
+        <option value="discord">Stable</option>
         <option value="discordcanary">Canary</option>
         <option value="discordptb">PTB</option>
         <option value="discorddev">Development</option>
       </select>
     </div>
-    <h3 class="text-center">Choose your Modification</h3>
+    <p class="text-center">Choose your Modification</p>
     <div class="center">
       <select name="mod" id="mod" class="dropdown-button">
         <option value="GooseMod">GooseMod</option>
@@ -118,6 +114,10 @@
 
     <div class="center">
       <button id="install" class="button dark">Install</button>
+    </div>
+    <br>
+    <div class="center">
+      <button id="uninstall" class="button dark">Uninstall</button>
     </div>
     <br>
     <p id="status"></p>
