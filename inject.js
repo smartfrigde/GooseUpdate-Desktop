@@ -9,7 +9,7 @@ document.getElementById("install").onclick = function () {
     (process.platform == "darwin"
       ? process.env.HOME + "/Library/Preferences"
       : process.env.HOME + "/.local/share");
-  var path = basepath + "\\discord";
+  var path = basepath + `\\${branch}`;
   var url = "https://updates.goosemod.com";
   console.log(`${path}\\settings.json`);
   fs.readFile(`${path}\\settings.json`, function (err, data) {
