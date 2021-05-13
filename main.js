@@ -1,13 +1,22 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
+const os = require('os')
+if (os.type() == "Linux") {
+  var iconformat = __dirname + "/logo.png";
+} else {
+  //test this
+  console.log("Running Non-Linux");
+  var iconformat = __dirname + "/logo.ico";
+}
 
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 320,
     height: 320,
-    title: "GooseMod Installer",
+    icon: iconformat,
+    title: "GooseUpdate Desktop",
     frame: false,
     resizable: false,
     webPreferences: {
