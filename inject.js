@@ -1,4 +1,5 @@
 document.getElementById("install").onclick = function () {
+  document.getElementById("status").innerHTML = "Injecting!";
   var fs = require("fs");
   var branch = document.getElementById("channel").value;
   var mod = document.getElementById("mod").value.toLowerCase();
@@ -18,5 +19,6 @@ document.getElementById("install").onclick = function () {
     json["NEW_UPDATE_ENDPOINT"] = `${url}/${mod}/`;
 
     fs.writeFileSync(`${path}\\settings.json`, JSON.stringify(json));
+    document.getElementById("status").innerHTML = "Injected!";
   });
 };
