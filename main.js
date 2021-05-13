@@ -22,6 +22,14 @@ function createWindow () {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
+  //fix for close lag
+  mainWindow.on("close", function (event) {
+    event.preventDefault();
+    mainWindow.destroy();
+    app.isQuiting = true;
+    app.quit();
+  });
+
 }
 
 // This method will be called when Electron has finished
