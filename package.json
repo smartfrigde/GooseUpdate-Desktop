@@ -1,14 +1,10 @@
 {
   "name": "gooseupdate-desktop",
   "version": "1.0.0",
-  "description": "GooseUpdate Desktop app for easy Discord mods install.",
+  "description": "GooseUpdate Desktop App",
   "main": "main.js",
   "scripts": {
-    "start": "electron-forge start",
-    "dist": "electron-builder",
-    "package": "electron-forge package",
-    "publish": "electron-forge publish",
-    "make": "electron-forge make"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -16,66 +12,21 @@
   },
   "keywords": [
     "Electron",
-    "discord",
-    "goose",
-    "goosenest",
-    "installer"
+    "installer",
+    "goosemod",
+    "bbd",
+    "goosenest"
   ],
   "author": "GitHub",
   "license": "MIT",
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.54",
-    "@electron-forge/maker-deb": "^6.0.0-beta.54",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
-    "@electron-forge/maker-zip": "^6.0.0-beta.54",
-    "@electron-forge/publisher-github": "*",
     "electron": "^12.0.7"
   },
   "dependencies": {
-    "custom-electron-titlebar": "^3.2.6",
-    "electron-squirrel-startup": "^1.0.0"
+    "custom-electron-titlebar": "^3.2.6"
   },
   "bugs": {
-    "url": "https://github.com/electron/electron-quick-start/issues"
+    "url": "https://github.com/smartfrigde/GooseUpdate-Desktop/issues"
   },
-  "homepage": "https://github.com/electron/electron-quick-start#readme",
-  "config": {
-    "forge": {
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "smartfrigde",
-              "name": "GooseUpdate-Deskop"
-            }
-          }
-        }
-      ],
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "gooseupdate_desktop"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
-  }
+  "homepage": "https://github.com/smartfrigde/GooseUpdate-Desktop#readme"
 }
