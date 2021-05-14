@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "custom-electron-titlebar": "3.2.6",
-    "electron-builder-squirrel-windows": "^22.11.3"
+    "electron-builder-squirrel-windows": "^22.11.4"
   },
   "devDependencies": {
     "electron": "latest",
